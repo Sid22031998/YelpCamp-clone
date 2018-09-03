@@ -20,7 +20,10 @@ var campgroundRoutes=require("./routes/campgrounds"),
 
 app.use(express.static(__dirname + "/public"));
 
-mongoose.connect("mongodb://localhost:27017/yelp_camp", { useNewUrlParser: true });
+//mongoose.connect("mongodb://localhost:27017/yelp_camp", { useNewUrlParser: true });
+mongoose.connect("mongodb://siddharthsingh:Sid22031998@ds141952.mlab.com:41952/sporadic", { useNewUrlParser: true });
+
+
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(methodOverride("_method"));
