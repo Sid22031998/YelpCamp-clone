@@ -1,39 +1,33 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>YelpCamp</title>
-     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">    
+<head>
+	<title>YelpCamp</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
      <link rel="stylesheet" href="/stylesheets/main.css">
-    </head>
-    <body>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                      <a class="navbar-brand" href="#">YelpCamp</a>
-                          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                          </button>
-                              <div class="collapse navbar-collapse">
-                                  <div class=="nav navbar-nav navbar-right nav-item active">
-                                      <% if(!currentUser){ %>
-                                         <span class="nav-item"><a href="/login">Login</a></span>
-                                         <span class="nav-item"><a href="/register">Sign Up</a></span>
+
+</head>
+<body>
+	<nav class="navbar navbar-default">
+		<div class="container">
+			<div class="navbar-header">
+				 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-nav-demo" aria-expanded="false">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+				<a href="#" class="navbar-brand">YelpCamp</a>
+			</div>
+			<div class="collapse navbar-collapse" id="bs-nav-demo">
+				<ul class="nav navbar-nav navbar-right">
+				                              	<% if(!currentUser){ %>
+                                         <li class="nav-item"><a href="/login">Login</a></li>
+                                         <li class="nav-item"><a href="/register">Sign Up</a></li>
                                       <% }else{ %>
-                                        <span><a href="#">Signed In As <%= currentUser.username %></a></span>
-                                        <span class="nav-item"><a href="/logout">Logout</a></span>
+                                        <li><a href="#">Signed In As <%= currentUser.username %></a></li>
+                                        <li class="nav-item"><a href="/logout">Logout</a></li>
                                         <% } %>
-                                  </div>
-                              </div>
-            </nav>
-        
-  <div class="container">
-      <% if(error && error.length>0){ %>
-          <div class="alert alert-danger" role="alert">
-            <%= error %>
-          </div>
-      <% } %>
-      <% if(success && success.length>0){ %>
-          <div class="alert alert-success" role="alert">
-            <%= success %>
-          </div>
-      <% } %>
-  </div>                     
-  
+				</ul>
+			</div>
+		</div>
+	</nav>
