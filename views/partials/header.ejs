@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>YelpCamp</title>
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">    
+     <link rel="stylesheet" href="/stylesheets/main.css">
+    </head>
+    <body>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                      <a class="navbar-brand" href="#">YelpCamp</a>
+                          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                          </button>
+                              <div class="collapse navbar-collapse">
+                                  <div class=="nav navbar-nav navbar-right nav-item active">
+                                      <% if(!currentUser){ %>
+                                         <span class="nav-item"><a href="/login">Login</a></span>
+                                         <span class="nav-item"><a href="/register">Sign Up</a></span>
+                                      <% }else{ %>
+                                        <span><a href="#">Signed In As <%= currentUser.username %></a></span>
+                                        <span class="nav-item"><a href="/logout">Logout</a></span>
+                                        <% } %>
+                                  </div>
+                              </div>
+            </nav>
+        
+  <div class="container">
+      <% if(error && error.length>0){ %>
+          <div class="alert alert-danger" role="alert">
+            <%= error %>
+          </div>
+      <% } %>
+      <% if(success && success.length>0){ %>
+          <div class="alert alert-success" role="alert">
+            <%= success %>
+          </div>
+      <% } %>
+  </div>                     
+  
